@@ -1,12 +1,10 @@
 ﻿@using TXTextControl.Web.MVC
-@using TXTextControl.Web
+
 
 @Html.TXTextControl().TextControl(settings =>
 {
-    settings.Dock = DockStyle.Window;
+    settings.Dock = TXTextControl.Web.DockStyle.Window;
 }).Render()
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
 
@@ -16,7 +14,7 @@
         var reader = new FileReader();
 
         reader.onload = function (event) {
-            var binaryString =  btoa(event.target.result);
+            var binaryString = btoa(event.target.result);
             var test = TXTextControl.images.addInline(binaryString, -1);
 
             try {
@@ -49,6 +47,6 @@
         });
 
     });
-  
+
 </script>
 
